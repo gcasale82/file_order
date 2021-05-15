@@ -107,9 +107,12 @@ class generate_files() :
             bar.next()
         bar.finish()
     def generate_duplicate_files(self):
+        print("Generating duplicated files ... \n")
+        print("Duplicate files listing :  \n")
         os.chdir(self.test_directory)
         for i in range(5) :
             filename = "file_source" + str(i)
             with open(filename, 'wb') as new_random_file:
                 new_random_file.write(os.urandom(100000))
             shutil.copy(filename, filename + "duplicated")
+            print(filename + " is duplicated file of file : "+ filename + "duplicated")

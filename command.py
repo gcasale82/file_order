@@ -6,7 +6,7 @@ def command() :
                                         description='program to delete duplicates or order file by extention',
                                         usage='%(prog)s [options] folder',
                                         epilog='Enjoy the program! :)')
-    my_parser.add_argument('folder', action='store', type=str, help='the path of the folder')
+    my_parser.add_argument('--folder', action='store', type=str, help='the path of the folder', required=False)
     my_parser.add_argument('--test', action='store_true', help='enable testing software functions')
     my_parser.add_argument('-o', '--order', action='store_true', help='order file by extention')
     my_parser.add_argument('-d', '--duplicates', action='store_true', help='remove duplicate files')
