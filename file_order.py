@@ -1,6 +1,6 @@
 import test
 import command
-import os
+from os import path as ospath
 
 def main():
     args = command.command()
@@ -12,7 +12,7 @@ def main():
         print("folder is a required argument if not using test option ")
         return 0
 
-    if os.path.exists(args.folder) :
+    if ospath.exists(args.folder) :
         if args.duplicates :
             command.remove_duplicates_decision(args.folder)
         if args.order :

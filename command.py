@@ -1,8 +1,8 @@
-import argparse
+from argparse import ArgumentParser
 import modules
 
 def command() :
-    my_parser = argparse.ArgumentParser(prog='file_order',
+    my_parser = ArgumentParser(prog='file_order',
                                         description='program to delete duplicates or order file by extention',
                                         usage='%(prog)s [options] folder',
                                         epilog='Enjoy the program! :)')

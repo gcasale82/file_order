@@ -1,6 +1,5 @@
 import modules
-import subprocess
-import time
+from time import sleep
 
 def run_test() :
     print(
@@ -16,32 +15,35 @@ optional arguments:
   -d, --duplicates  remove duplicate files
 """
     )
-    time.sleep(1.5)
-    print("Generating testing files and duplicated file")
+    sleep(1.5)
+    print("Generating testing files and duplicated files")
     generate_test_files = modules.generate_files(50,100)
     generate_test_files.generate_test_files()
     generate_test_files.generate_duplicate_files()
-    time.sleep(1)
+    testDirectory = generate_test_files.test_directory
+    all_files = modules.find_files_from_folder(testDirectory)
+    sleep(1)
     print("Listing test directory :")
-    time.sleep(0.5)
-    list_files = subprocess.run(["ls", "-l", generate_test_files.test_directory])
-    time.sleep(1)
+    sleep(0.5)
+    for file in all_files : print(file)
+    sleep(1)
     print("Removing testing duplicated files")
-    time.sleep(0.5)
+    sleep(0.5)
     remove_duplicates = modules.remove_duplicates(generate_test_files.test_directory)
     remove_duplicates.calculate_all_files()
     remove_duplicates.find_duplicates()
-    time.sleep(1)
+    sleep(1)
     remove_duplicates.remove_duplicates()
-    time.sleep(1)
+    sleep(1)
     print("Ordering test files by extention , you can check inside testfiles directory created")
-    time.sleep(0.5)
+    sleep(0.5)
     forder = modules.order_files(generate_test_files.test_directory)
     forder.create_file_ext()
     forder.create_folders()
     forder.move_files()
-    time.sleep(1)
+    sleep(1)
     print("Listing test directory :")
-    time.sleep(0.5)
-    list_files = subprocess.run(["ls", "-l", generate_test_files.test_directory])
+    all_files = modules.find_files_from_folder(testDirectory)
+    sleep(0.5)
+    for file in all_files : print(file)
     print("if the execution has completed with no errors testing is successfull")
