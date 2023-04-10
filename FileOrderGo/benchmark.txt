@@ -1,18 +1,2 @@
 Benchmark performed on 13 GB folder with 2000 files and 500 duplicated files.
-
-Go benchmark
-laptop:~/scripts/fileOrderpath$ du -h testfolder/
-13G	testfolder/
-
-laptop:~/scripts/fileOrderpath$ time ./fileOrder 
-Enter directory/home/amn/scripts/fileOrderpath/testfolder
-
-real	0m23,755s
-user	0m1,260s
-sys	0m11,048s
-----------------------
-Python benchmark
-laptop:~/file_order$ time python3 file_order.py -o -d --folder /home/amn/file_order/testfolder
-real	0m11,346s
-user	0m0,794s
-sys	0m6,386s
+To be updated...
